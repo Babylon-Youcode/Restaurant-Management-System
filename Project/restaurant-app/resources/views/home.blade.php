@@ -14,7 +14,27 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div class="row text-center">
+                        <a href="/management">
+                            <div class="col-sm-4">
+                                <h4>Management</h4>
+                                <img width="50px" src="{{asset('images/management.svg')}}">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/cashier">
+                                <h4>Cashier</h4>
+                                <img width="50px" src="{{asset('images/cash-machine.svg')}}">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/report">
+                                <h4>Report</h4>
+                                <img width="50px" src="{{asset('images/dashboard.svg')}}">
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
