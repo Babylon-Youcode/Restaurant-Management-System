@@ -1,4 +1,4 @@
-# Food-Ordering-System
+# Restaurant Management System
 
 ## Objective / Vision
 
