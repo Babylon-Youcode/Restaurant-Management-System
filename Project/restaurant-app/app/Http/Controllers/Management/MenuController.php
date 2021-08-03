@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
+
 
 class MenuController extends Controller
 {
@@ -14,7 +16,10 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('management.menu');
+        $data = [
+            'categories' => Category::all()
+        ];
+        return view('management.menu',$data);
     }
 
     /**
@@ -24,7 +29,10 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'categories' => Category::all()
+        ];
+        return view('management.createMenu',$data);
     }
 
     /**

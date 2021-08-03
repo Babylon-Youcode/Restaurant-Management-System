@@ -6,7 +6,7 @@
         @include('management.inc.sidebar')
              <div class="col-md-8">
                         <i class="fas fa-hamburger"></i> Menu
-                    <a href="" class="btn btn-success btn-sm float-right"><i class="fas fa-plus"></i> Create Menu</a>
+                    <a href="/management/menu/create" class="btn btn-success btn-sm float-right"><i class="fas fa-plus"></i> Create Menu</a>
                     <hr>
 
                     @if(Session()->has('status'))
@@ -23,7 +23,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Category</th>
+                            <th scope="col">Menu</th>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
                         </tr>
