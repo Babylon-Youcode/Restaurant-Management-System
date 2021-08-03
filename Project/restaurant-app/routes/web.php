@@ -26,3 +26,6 @@ Route::get('/management' , function(){
 });
 
 Route::resource('management/category','App\Http\Controllers\Management\CategoryController');
+
+Route::resource('management/menu','App\Http\Controllers\Management\MenuController');
+
