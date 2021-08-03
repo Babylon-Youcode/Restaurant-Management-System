@@ -42,10 +42,14 @@
                                     <th scoop="row">{{$category->id}}</th>
                                     <td>{{$category->name}}</td>
                                     <td>
-                                        <a href="management/category/{{$category->id}/edit" class="btn btn-warning">Edit</a>
+                                        <a href="/management/category/{{$category->id}}/edit" class="btn btn-warning">Edit</a>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-danger">Delete</a>
+                                       <form action="/management/category/{{$category->id}}" method="POST">
+                                           @csrf
+                                           @method('DELETE')
+                                           <input value="Delete" type="submit"  class="btn btn-danger">
+                                        </form> 
                                     </td>
                                 </tr>
 
