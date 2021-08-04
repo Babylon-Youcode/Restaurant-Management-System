@@ -16,7 +16,7 @@
                              </ul>
                         </div>
                     @endif
-                <form action="/management/menu" method="POST">
+                <form action="/management/menu" method="POST" enctype="multipart/form-data">
 
                     @csrf
 
