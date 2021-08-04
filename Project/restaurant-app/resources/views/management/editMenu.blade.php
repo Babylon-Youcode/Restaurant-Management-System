@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         @include('management.inc.sidebar')
              <div class="col-md-8">
-                    <i class="fas fa-plus"></i> Edit a Menu
+               <i class="fas fa-hamburger"></i> Edit a Menu
                     <hr>
                     @if($errors->any())
                         <div class=" alert alert-danger">
@@ -16,9 +16,11 @@
                              </ul>
                         </div>
                     @endif
-                <form action="/management/menu" method="POST" enctype="multipart/form-data">
+                <form action="/management/menu/{{$menu->id}}" method="POST" enctype="multipart/form-data">
 
                     @csrf
+                    @method('PUT')
+
 
                     <div class="form-group">
                         <label for="menuName">Menu Name</label>
