@@ -17,10 +17,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $data = [
-            'categories' => Category::all()
-        ];
-        return view('management.menu',$data);
+        $menus = Menu::all();
+        return view('management.menu')->with('menus', $menus);
     }
 
     /**

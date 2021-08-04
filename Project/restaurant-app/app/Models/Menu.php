@@ -12,4 +12,8 @@ class Menu extends Model
     protected $fillable = [
         'name', 'price', 'image', 'description'
     ];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
