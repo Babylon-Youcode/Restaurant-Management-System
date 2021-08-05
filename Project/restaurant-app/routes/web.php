@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Management\MenuController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,4 @@ Route::resource('management/category','App\Http\Controllers\Management\CategoryC
 
 Route::resource('management/menu','App\Http\Controllers\Management\MenuController');
 
+// Route::post('post/{id}',[MenuController::class,'store'])->name('postproduct');
