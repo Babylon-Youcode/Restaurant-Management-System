@@ -23,8 +23,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::get('/management' , function(){
     return view("management.index");
+});
+
+
+Route::get('/cashier' , function(){
+    return view("cashier.index");
 });
 
 Route::resource('management/category','App\Http\Controllers\Management\CategoryController');
@@ -33,4 +39,4 @@ Route::resource('management/menu','App\Http\Controllers\Management\MenuControlle
 
 Route::resource('management/table','App\Http\Controllers\Management\TableController');
 
-// Route::post('post/{id}',[MenuController::class,'store'])->name('postproduct');
+

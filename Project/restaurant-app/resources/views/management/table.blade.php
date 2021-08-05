@@ -53,6 +53,7 @@
 
                     </tbody>
                 </table>
+                {{$tables->links()}}
             </div>
     </div>
 </div>
