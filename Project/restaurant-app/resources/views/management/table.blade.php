@@ -31,27 +31,28 @@
                     </thead>
 
                     <tbody>
-                                <tr>
-                                    <th scoop="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="/management/table/{table}/edit" class="btn btn-warning">Edit</a>
-                                    </td>
-                                    <td>
-                                       <form action="/management/table/{table}" method="POST">
-                                           @csrf
-                                           @method('DELETE')
-                                           <input value="Delete" type="submit"  class="btn btn-danger">
-                                        </form> 
-                                    </td>
-                                </tr>
+                        @foreach($tables as $table)
+                        
+                        <tr>
+                            <td>{{$table->id}}</td>
+                            <td>{{$table->name}}</td>
+                            <td>{{$table->status}}</td>
+                            <td>
+                            <a href="/management/table/{{$table->id}}/edit" class="btn btn-warning">Edit</a>
+                            </td>
+                            <td>
+                            <form action="/management/table/{{$table->id}}" method="post">
+                            @csrf 
+                            @method('DELETE')
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                            </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                            
 
                     </tbody>
-
                 </table>
-                
-
             </div>
     </div>
 </div>
