@@ -28,7 +28,9 @@ Route::get('/management' , function(){
 });
 
 Route::resource('management/category','App\Http\Controllers\Management\CategoryController');
-
+ 
 Route::resource('management/menu','App\Http\Controllers\Management\MenuController');
+
+Route::resource('management/table','App\Http\Controllers\Management\TableController');
 
 // Route::post('post/{id}',[MenuController::class,'store'])->name('postproduct');
