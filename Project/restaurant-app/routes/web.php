@@ -28,10 +28,12 @@ Route::get('/management' , function(){
     return view("management.index");
 });
 
-
+    // routes for cashier
 Route::get('/cashier' , function(){
     return view("cashier.index");
 });
+
+Route::get('/cashier/getTable',[App\Http\Controllers\Cashier\CashierController::class,'getTables']);
 
 Route::resource('management/category','App\Http\Controllers\Management\CategoryController');
  
