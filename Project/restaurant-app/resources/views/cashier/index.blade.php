@@ -14,12 +14,25 @@
 
       <script>
 $(document).ready(function(){
+
+  // make table-detail hidden by default
+  $("#table-detail").hide();
+
+    //show all tables when a client click on the button
     $("#btn-show-tables").click(function(){
+      if($("#table-detail").is(":hidden")){
         $.get("/cashier/getTable", function(data){
-           $("#table-detail").html(data);
+        $("#table-detail").html(data);
+        $("#table-detail").slideDown('fast');
+        $("#btn-show-tables").html('Hide Tables').removeClass('btn-primary').addClass('btn-danger');
       })
-      });
-    });
+      }else{
+        $("#table-detail").slideUp('fast');
+        $("#btn-show-tables").html('View All Tables').removeClass('btn-danger').addClass('btn-primary');
+      }
+      
+  });
+});
   </script>
 
 @endsection
