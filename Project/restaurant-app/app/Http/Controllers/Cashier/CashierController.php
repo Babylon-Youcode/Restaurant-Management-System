@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Table;
+use App\Models\Menu;
 
 class CashierController extends Controller
 {
@@ -32,23 +33,31 @@ class CashierController extends Controller
             $html .='</button>';
             $html .= '</div>';
         }
-        return $html; 
+        return $html;  
     }
 
 
 
+    public function getMenuByCategory($category_id){
+        $menus = Menu::where('category_id', $category_id)->get();
+        $html = '';
+        foreach($menus as $menu){
+            $html .= '
+            <div class="col-md-3 text-center">
+                <a class="btn btn-outline-secondary btn-menu" data-id="'.$menu->id.'">
+                    <img class="img-fluid" src="'.url('/menu_images/'.$menu->image).'">
+                    <br>
+                    '.$menu->name.'
+                    <br>
+                    '.number_format($menu->price).' MAD
+                </a>
+            </div>
+            
+            ';
+        }
+        return $html;
+
+    } 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-}
+};

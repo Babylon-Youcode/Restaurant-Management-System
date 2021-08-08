@@ -38,7 +38,7 @@
               <tr>
                 <td>{{$menu->id}}</td>
                 <td>{{$menu->name}}</td>
-                <td>{{$menu->price}}</td>
+                <td>{{$menu->price}} MAD</td>
                 <td>
                   <img src="{{asset('menu_images')}}/{{$menu->image}}" alt="{{$menu->name}}" width="120px" height="120px" class="img-thumbnail">
                 </td>

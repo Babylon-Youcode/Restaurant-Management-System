@@ -23,26 +23,36 @@
       </div>
 
       <script>
-$(document).ready(function(){
+          $(document).ready(function(){
 
-  // make table-detail hidden by default
-  $("#table-detail").hide();
+            // make table-detail hidden by default
+            $("#table-detail").hide();
 
-    //show all tables when a client click on the button
-    $("#btn-show-tables").click(function(){
-      if($("#table-detail").is(":hidden")){
-        $.get("/cashier/getTable", function(data){
-        $("#table-detail").html(data);
-        $("#table-detail").slideDown('fast');
-        $("#btn-show-tables").html('Hide Tables').removeClass('btn-primary').addClass('btn-danger');
-      })
-      }else{
-        $("#table-detail").slideUp('fast');
-        $("#btn-show-tables").html('View All Tables').removeClass('btn-danger').addClass('btn-primary');
-      }
-      
-  });
-});
+              //show all tables when a client click on the button
+              $("#btn-show-tables").click(function(){
+                if($("#table-detail").is(":hidden")){
+                  $.get("/cashier/getTable", function(data){
+                  $("#table-detail").html(data);
+                  $("#table-detail").slideDown('fast');
+                  $("#btn-show-tables").html('Hide Tables').removeClass('btn-primary').addClass('btn-danger');
+                })
+                }else{
+                  $("#table-detail").slideUp('fast');
+                  $("#btn-show-tables").html('View All Tables').removeClass('btn-danger').addClass('btn-primary');
+                }
+                
+            });
+          });
+
+
+          // load menus by category
+          $(".nav-link").click(function(){
+            $.get("/cashier/getMenuByCategory/"+$(this).data("id"),function(data){
+              $("#list-menu").hide();
+              $("#list-menu").html(data);
+              $("#list-menu").fadeIn('fast');
+            });
+          })
   </script>
-
+ 
 @endsection
