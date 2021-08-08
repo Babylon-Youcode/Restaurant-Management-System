@@ -34,6 +34,7 @@ Route::get('/cashier' , function(){
 });
 
 Route::get('/cashier/getTable',[App\Http\Controllers\Cashier\CashierController::class,'getTables']);
+Route::get('/cashier',[App\Http\Controllers\Cashier\CashierController::class,'index']);
 
 Route::resource('management/category','App\Http\Controllers\Management\CategoryController');
  
