@@ -72,7 +72,11 @@
 
           $("#list-menu").on("click", ".btn-menu", function(){
           if(SELECTED_TABLE_ID == ""){
-            alert("You need to select a table for the customer first");
+            Swal.fire(
+                'Which Table?',
+                'You need to select a table for the customer first',
+                'question'
+              );
             }else{ 
               var menu_id = $(this).data("id");
               $.ajax({
