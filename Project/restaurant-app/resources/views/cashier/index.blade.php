@@ -52,7 +52,29 @@
               $("#list-menu").html(data);
               $("#list-menu").fadeIn('fast');
             });
-          })
+
+
+
+          // detect button table onclick to show table data
+            // var SELECTED_TABLE_ID = "";
+            // var SELECTED_TABLE_NAME = "";
+            // var SALE_ID = "";
+          $("#table-detail").on("click", ".btn-table", function(){    
+            var SELECTED_TABLE_ID = $(this).data("id");
+            var SELECTED_TABLE_NAME = $(this).data("name");
+            $("#selected-table").html('<br><h3>Table: '+SELECTED_TABLE_NAME+'</h3><hr>');
+            // $.get("/cashier/getSaleDetailsByTable/"+SELECTED_TABLE_ID, function(data){
+            // $("#order-detail").html(data);
+            // });
+
+
+
+
+
+          });
+
+
+          });
   </script>
  
 @endsection
