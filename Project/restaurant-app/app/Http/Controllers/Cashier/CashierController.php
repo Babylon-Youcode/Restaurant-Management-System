@@ -63,4 +63,17 @@ class CashierController extends Controller
     } 
 
 
+
+    public function orderFood(Request $request){
+        // $menu = Menu::find($request->menu_id);
+        // $table_id = $request->table_id;
+        // $table_name = $request->table_name;
+
+        return $request->menu_id;
+
+
+    }
+
+
+
 };
