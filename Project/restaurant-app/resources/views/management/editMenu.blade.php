@@ -68,6 +68,8 @@
                         </div>
 
                         <button type="submit" class="btn btn-warning">Edit</button>
+                        <button type="cancel" class="btn btn-danger" onclick="location.href = '/management/menu';">Cancel</button>
+
                         </form>
             </div>
     </div>

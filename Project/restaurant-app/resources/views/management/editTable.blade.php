@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         @include('management.inc.sidebar')
              <div class="col-md-8">
-                    <i class="fas fa-plus"></i> Edit Table
+               <i class="fas fa-chair"></i> Edit Table
                     <hr>
                     @if($errors->any())
                         <div class=" alert alert-danger">
@@ -27,9 +27,10 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="cancel" class="btn btn-danger" onclick="location.href = '/management/table';">Cancel</button>
                 </form> 
             </div>
-    </div>
+        </div>
 </div>
 
 @endsection

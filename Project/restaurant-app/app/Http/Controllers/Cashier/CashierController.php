@@ -10,6 +10,9 @@ use App\Models\Menu;
 
 class CashierController extends Controller
 {
+
+
+    
     //// First Page of Cashier
     public function index(){
         $categories = Category::all();

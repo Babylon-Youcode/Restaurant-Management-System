@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         @include('management.inc.sidebar')
              <div class="col-md-8">
-               <i class="fas fa-chair"></i></i> Table
+               <i class="fas fa-chair"></i> Table
                     <a href="/management/table/create" class="btn btn-success btn-sm float-right"><i class="fas fa-plus"></i> Create a Table</a>
                     <hr>
 

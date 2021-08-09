@@ -27,6 +27,8 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="cancel" class="btn btn-danger" onclick="location.href = '/management/category';">Cancel</button>
+
                 </form> 
             </div>
     </div>

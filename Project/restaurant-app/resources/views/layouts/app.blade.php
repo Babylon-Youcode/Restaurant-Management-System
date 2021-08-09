@@ -9,13 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <!-- Sweet Alert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.2/sweetalert2.all.min.js" integrity="sha512-5+I7/10DerVrPt5siiRRgd02oM01e3h18YLli9U9URyp84hbHeTbyEPmDatlHtIFzxK+o/XMlBplrQ2GKlZlZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
@@ -81,5 +81,7 @@
             @yield('content')
         </main>
     </div>
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
