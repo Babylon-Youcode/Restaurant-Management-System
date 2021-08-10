@@ -102,12 +102,57 @@ class CashierController extends Controller
         $sale->total_price = $sale->total_price + ($request->quantity * $menu->price);
         $sale->save();
 
-        $html = $this->getSaleDetails($sale_id);
+        // $html = $this->getSaleDetails($sale_id);
+    }
+
+
+        public function getSaleDetails($sale_id){
+        // list all saledetail
+        $html = '<p>Sale ID: '.$sale_id.'</p>';
+        $saleDetails = SaleDetail::where('sale_id', $sale_id)->get();
+        $html .= '<div class="table-responsive-md" style="overflow-y:scroll; height: 400px; border: 1px solid #343A40">
+        <table class="table table-stripped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Menu</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>';
+
+        foreach($saleDetails as $saleDetail){
+          
+            $html .= '
+            <tr>
+                <td>'.$saleDetail->menu_id.'</td>
+                <td>'.$saleDetail->menu_name.'</td>
+                <td>'.$saleDetail->quantity.'</td>
+                <td>'.$saleDetail->menu_price.'</td>
+                <td>'.($saleDetail->menu_price * $saleDetail->quantity).'</td>';
+                if($saleDetail->status == "noConfirm"){
+                    $showBtnPayment = false;
+                    $html .= '<td><a data-id="'.$saleDetail->id.'" class="btn btn-danger btn-delete-saledetail"><i class="far fa-trash-alt"></a></td>';
+                }else{ // status == "confirm"
+                    $html .= '<td><i class="fas fa-check-circle"></i></td>';
+                }
+            $html .= '</tr>';
+        }
+        $html .='</tbody></table></div>';
+
         return $html; //testing 
-    
 
 
     }
+    
+
+
+    
+
+
 
 
 
